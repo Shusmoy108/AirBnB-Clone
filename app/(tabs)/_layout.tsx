@@ -1,55 +1,89 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable, useColorScheme } from 'react-native';
+import { Platform } from "react-native";
+import { Tabs } from "expo-router";
 
-import Colors from '../../constants/Colors';
+// CONSTANTS
+import Colors from "@/constants/Colors";
+import {
+	AntDesign,
+	FontAwesome5,
+	Ionicons,
+	MaterialCommunityIcons,
+} from "@expo/vector-icons";
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+const Layout = () => {
+	return (
+		<Tabs
+			screenOptions={{
+				tabBarActiveTintColor: Colors.primary,
+				tabBarStyle: {
+					height: 80,
+					paddingBottom: Platform.OS === "ios" ? 30 : 13,
+				},
+				tabBarLabelStyle: {
+					fontFamily: "mon-sb",
+				},
+			}}
+		>
+			<Tabs.Screen
+				name="index"
+				options={{
+					tabBarLabel: "Explore",
+					tabBarLabelStyle: { fontSize: 12 },
+					tabBarIcon: ({ color, size }) => (
+						<AntDesign name="search1" size={size} color={color} />
+					),
+				}}
+			/>
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+			<Tabs.Screen
+				name="wishlists"
+				options={{
+					tabBarLabel: "Wishlists",
+					tabBarLabelStyle: { fontSize: 12 },
+					tabBarIcon: ({ color, size }) => (
+						<Ionicons name="heart-outline" size={size} color={color} />
+					),
+				}}
+			/>
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
-}
+			<Tabs.Screen
+				name="trips"
+				options={{
+					tabBarLabel: "Trips",
+					tabBarLabelStyle: { fontSize: 12 },
+					tabBarIcon: ({ color, size }) => (
+						<FontAwesome5 name="airbnb" size={size} color={color} />
+					),
+				}}
+			/>
+
+			<Tabs.Screen
+				name="inbox"
+				options={{
+					tabBarLabel: "Inbox",
+					tabBarLabelStyle: { fontSize: 12 },
+					tabBarIcon: ({ color, size }) => (
+						<MaterialCommunityIcons
+							name="message-outline"
+							size={size}
+							color={color}
+						/>
+					),
+				}}
+			/>
+
+			<Tabs.Screen
+				name="profile"
+				options={{
+					tabBarLabel: "Profile",
+					tabBarLabelStyle: { fontSize: 12 },
+					tabBarIcon: ({ color, size }) => (
+						<Ionicons name="person-circle-outline" size={size} color={color} />
+					),
+				}}
+			/>
+		</Tabs>
+	);
+};
+
+export default Layout;

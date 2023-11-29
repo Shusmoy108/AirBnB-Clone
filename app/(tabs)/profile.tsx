@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 const Page = () => {
 	return (
 		<View>
-			<Text>Index</Text>
+			<Text>Profile</Text>
 		</View>
 	);
 };
