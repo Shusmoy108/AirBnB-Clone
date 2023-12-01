@@ -33,7 +33,7 @@ export const defaultStyles = StyleSheet.create({
 		position: "absolute",
 		left: 16,
 	},
-	fotter: {
+	footer: {
 		height: 100,
 		paddingHorizontal: 20,
 		paddingVertical: 10,
