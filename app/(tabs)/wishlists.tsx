@@ -17,7 +17,7 @@ const Page = () => {
 			<Stack.Screen
 				options={{
 					header: () => (
-						<SafeAreaView style={{ flex: 1 }}>
+						<SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
 							<TouchableOpacity style={styles.header}>
 								<Text style={styles.headerText}>Edit</Text>
 							</TouchableOpacity>
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		paddingTop: Platform.OS === "ios" ? 50 : 100,
+		backgroundColor: "#fff",
 	},
 	header: {
 		height: Platform.OS === "ios" ? 50 : 100,
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
 	},
 	title: {
 		marginTop: 20,
-		paddingHorizontal: 30,
+		marginHorizontal: 30,
 	},
 	titleText: {
 		color: "#000",
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
 		marginTop: 10,
 		color: Colors.grey,
 		fontSize: 16,
+		fontFamily: "mon",
 		lineHeight: 19,
 	},
 });
