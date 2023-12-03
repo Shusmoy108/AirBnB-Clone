@@ -53,8 +53,9 @@ const Listings = ({ listings: items, category, refresh }: Props) => {
 					exiting={FadeOutLeft}
 				>
 					<Image source={{ uri: item.thumbnail_url }} style={styles.image} />
+
 					<TouchableOpacity
-						style={{ position: "absolute", right: 30, top: 30 }}
+						style={{ position: "absolute", right: 30, top: 10 }}
 					>
 						<Ionicons name="ios-heart-outline" size={26} color="#000" />
 					</TouchableOpacity>
