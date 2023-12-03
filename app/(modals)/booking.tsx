@@ -40,7 +40,7 @@ const Page = () => {
 	const onClearAll = () => {
 		setSelectedPlace(0);
 		setOpenCard(0);
-		setGroups(() => guestsGroups);
+		setGroups(guestsGroups);
 	};
 
 	return (
@@ -281,6 +281,7 @@ const Page = () => {
 					)}
 				</View>
 			</ScrollView>
+
 			{/* Footer */}
 			<Animated.View
 				style={defaultStyles.footer}
