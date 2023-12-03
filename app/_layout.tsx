@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { TouchableOpacity } from "react-native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack, useRouter } from "expo-router";
 import { Platform } from "react-native";
@@ -6,8 +7,11 @@ import * as SecureStore from "expo-secure-store";
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { Feather, Ionicons } from "@expo/vector-icons";
 
-// REACT NATIVE COMPONENTS
-import { TouchableOpacity } from "react-native";
+// COMPONENTS
+import ModalHeaderText from "@/components/Modal-Header-Text";
+
+// CONSTANTS
+import Colors from "@/constants/Colors";
 
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
@@ -112,25 +116,28 @@ function RootLayoutNav() {
 				name="listing/[id]"
 				options={{ headerTitle: "", headerTransparent: true }}
 			/>
+
 			<Stack.Screen
 				name="(modals)/booking"
 				options={{
 					presentation: "transparentModal",
 					animation: "fade",
+					headerTransparent: true,
+					headerTitle: () => <ModalHeaderText />,
+					headerBackVisible: false,
 					headerLeft: () => (
 						<TouchableOpacity
-							style={
-								Platform.OS !== "ios" && {
-									marginRight: 20,
-								}
-							}
+							style={{
+								marginRight: Platform.OS === "android" ? 40 : 0,
+								padding: 3,
+								backgroundColor: "#fff",
+								borderColor: Colors.grey,
+								borderWidth: 1,
+								borderRadius: 20,
+							}}
 							onPress={() => router.back()}
 						>
-							{Platform.OS === "ios" ? (
-								<Ionicons name="close-outline" size={28} />
-							) : (
-								<Feather name="arrow-left" size={25} color="black" />
-							)}
+							<Ionicons name="close-outline" size={25} />
 						</TouchableOpacity>
 					),
 				}}
