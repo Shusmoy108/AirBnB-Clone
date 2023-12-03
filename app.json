@@ -1,7 +1,7 @@
 {
 	"expo": {
 		"name": "Airbnb_Clone",
-		"slug": "Airbnb_Clone",
+		"slug": "airbnb-clone",
 		"description": "An Airbnb clone Expo app",
 		"version": "1.0.0",
 		"orientation": "portrait",
@@ -32,6 +32,21 @@
 		"experiments": {
 			"typedRoutes": true,
 			"tsconfigPaths": true
+		},
+		"extra": {
+			"router": {
+				"origin": false
+			},
+			"eas": {
+				"projectId": "15f38312-bee8-433f-a0fa-009de56d0a9f"
+			}
+		},
+		"owner": "m_i_e_r_o_n",
+		"runtimeVersion": {
+			"policy": "appVersion"
+		},
+		"updates": {
+			"url": "https://u.expo.dev/15f38312-bee8-433f-a0fa-009de56d0a9f"
 		}
 	}
 }
