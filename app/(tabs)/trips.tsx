@@ -7,6 +7,8 @@ import {
 	TouchableOpacity,
 } from "react-native";
 import { Stack, Link } from "expo-router";
+
+// CONSTANTS
 import Colors from "@/constants/Colors";
 
 const Page = () => {
