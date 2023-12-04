@@ -45,4 +45,46 @@ export const defaultStyles = StyleSheet.create({
 		left: 0,
 		right: 0,
 	},
+	menuHeader: {
+		color: Colors.dark,
+		fontSize: 24,
+		fontFamily: "mon-sb",
+		marginBottom: 20,
+	},
+	menuItem: {
+		paddingVertical: 10,
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+		borderBottomWidth: StyleSheet.hairlineWidth,
+		borderColor: Colors.grey,
+	},
+	menuLeftContent: {
+		flexDirection: "row",
+		justifyContent: "flex-start",
+		alignItems: "center",
+		gap: 15,
+	},
+	menuLeftContentAlt: {
+		flexDirection: "row",
+		justifyContent: "flex-start",
+		alignItems: "flex-start",
+		gap: 15,
+	},
+	menuTextGroup: {
+		paddingTop: 5,
+		justifyContent: "center",
+		alignItems: "flex-start",
+		gap: 3,
+	},
+	menuText: {
+		color: Colors.dark,
+		fontSize: 17,
+		fontFamily: "mon-sb",
+	},
+	menuSubText: {
+		color: Colors.grey,
+		fontSize: 14,
+		fontFamily: "mon",
+	},
 });

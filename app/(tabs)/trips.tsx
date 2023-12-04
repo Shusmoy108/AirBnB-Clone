@@ -60,11 +60,11 @@ export default Page;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		paddingTop: Platform.OS === "ios" ? 50 : 100,
+		paddingTop: Platform.OS === "ios" ? 40 : 100,
 		backgroundColor: "#fff",
 	},
 	header: {
-		height: Platform.OS === "ios" ? 50 : 100,
+		height: Platform.OS === "ios" ? 40 : 100,
 	},
 	title: {
 		marginTop: 20,

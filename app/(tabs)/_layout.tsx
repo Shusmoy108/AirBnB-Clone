@@ -78,9 +78,8 @@ const Layout = () => {
 					tabBarLabel: "Profile",
 					tabBarLabelStyle: { fontSize: 12 },
 					tabBarIcon: ({ color, size }) => (
-						<Ionicons name="person-circle-outline" size={size} color={color} />
+						<FontAwesome5 name="user-circle" size={size} color={color} />
 					),
-					headerShown: false,
 				}}
 			/>
 		</Tabs>
