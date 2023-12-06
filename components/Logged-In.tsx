@@ -7,6 +7,7 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
+import { Link } from "expo-router";
 import {
 	Ionicons,
 	FontAwesome,
@@ -36,35 +37,43 @@ const LoggedIn = () => {
 			<View style={styles.title}>
 				<Text style={styles.titleText}>Profile</Text>
 
-				<Ionicons name="notifications-outline" size={26} />
+				<TouchableOpacity>
+					<Ionicons name="notifications-outline" size={26} />
+				</TouchableOpacity>
 			</View>
 
 			<View style={styles.body}>
-				<TouchableOpacity style={styles.userInfo}>
-					<View style={styles.userInfoLeftContent}>
-						<Image source={{ uri: user?.imageUrl }} style={styles.avatar} />
+				<Link href={"/user/"} asChild>
+					<TouchableOpacity style={styles.userInfo}>
+						<View style={styles.userInfoLeftContent}>
+							<Image source={{ uri: user?.imageUrl }} style={styles.avatar} />
 
-						<View style={styles.userDetail}>
-							<Text
-								style={{
-									color: Colors.dark,
-									fontSize: 19,
-									fontFamily: "mon-sb",
-								}}
-							>
-								{user?.firstName}
-							</Text>
+							<View style={styles.userDetail}>
+								<Text
+									style={{
+										color: Colors.dark,
+										fontSize: 19,
+										fontFamily: "mon-sb",
+									}}
+								>
+									{user?.firstName}
+								</Text>
 
-							<Text
-								style={{ color: Colors.grey, fontSize: 15, fontFamily: "mon" }}
-							>
-								Show profile
-							</Text>
+								<Text
+									style={{
+										color: Colors.grey,
+										fontSize: 15,
+										fontFamily: "mon",
+									}}
+								>
+									Show profile
+								</Text>
+							</View>
 						</View>
-					</View>
 
-					<Ionicons name="chevron-forward" size={26} color={Colors.dark} />
-				</TouchableOpacity>
+						<Ionicons name="chevron-forward" size={26} color={Colors.dark} />
+					</TouchableOpacity>
+				</Link>
 
 				<TouchableOpacity style={styles.newFeature}>
 					<View style={styles.newFeatureLeftContent}>

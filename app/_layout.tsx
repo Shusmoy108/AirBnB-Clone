@@ -88,6 +88,7 @@ function RootLayoutNav() {
 	return (
 		<Stack>
 			<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+
 			<Stack.Screen
 				name="(modals)/login"
 				options={{
@@ -112,6 +113,7 @@ function RootLayoutNav() {
 					),
 				}}
 			/>
+
 			<Stack.Screen
 				name="listing/[id]"
 				options={{ headerTitle: "", headerTransparent: true }}
@@ -142,6 +144,8 @@ function RootLayoutNav() {
 					),
 				}}
 			/>
+
+			<Stack.Screen name="user/index" options={{}} />
 		</Stack>
 	);
 }
