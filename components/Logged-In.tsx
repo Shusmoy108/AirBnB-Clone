@@ -201,7 +201,7 @@ const LoggedIn = () => {
 								color={Colors.dark}
 							/>
 
-							<Text style={defaultStyles.menuText}>Translation</Text>
+							<Text style={defaultStyles.menuText}>Notifications</Text>
 						</View>
 
 						<Ionicons name="chevron-forward" size={24} color={Colors.dark} />
