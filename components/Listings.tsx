@@ -57,7 +57,7 @@ const Listings = ({ listings: items, category, refresh }: Props) => {
 					<TouchableOpacity
 						style={{ position: "absolute", right: 30, top: 10 }}
 					>
-						<Ionicons name="ios-heart-outline" size={26} color="#000" />
+						<Ionicons name="heart-outline" size={26} color="#000" />
 					</TouchableOpacity>
 
 					<View

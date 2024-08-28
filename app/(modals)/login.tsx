@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 // HOOKS
 import { useWarmUpBrowser } from "@/hook/useWarmUpBrowser";
-import { TextInput } from "react-native-gesture-handler";
+//import { TextInput } from "react-native-gesture-handler";
 
 // CONSTANTS
 import { defaultStyles } from "@/constants/Styles";
@@ -49,12 +49,12 @@ const Page = () => {
 
 	return (
 		<View style={styles.container}>
-			<TextInput
+			{/* <TextInput
 				autoCapitalize="none"
 				placeholder="Email"
 				style={[defaultStyles.inputField, { marginBottom: 30 }]}
 				placeholderTextColor="gray"
-			/>
+			/> */}
 
 			<TouchableOpacity style={defaultStyles.btn}>
 				<Text style={defaultStyles.btnText}>Continue</Text>
@@ -93,7 +93,7 @@ const Page = () => {
 					onPress={() => onSelectAuth(Strategy.Apple)}
 				>
 					<Ionicons
-						name="md-logo-apple"
+						name="logo-apple"
 						size={24}
 						style={defaultStyles.bntIcon}
 					/>
@@ -105,7 +105,7 @@ const Page = () => {
 					onPress={() => onSelectAuth(Strategy.Google)}
 				>
 					<Ionicons
-						name="md-logo-google"
+						name="logo-google"
 						size={24}
 						style={defaultStyles.bntIcon}
 					/>
@@ -117,7 +117,7 @@ const Page = () => {
 					onPress={() => onSelectAuth(Strategy.Facebook)}
 				>
 					<Ionicons
-						name="md-logo-facebook"
+						name="logo-facebook"
 						size={24}
 						style={defaultStyles.bntIcon}
 					/>

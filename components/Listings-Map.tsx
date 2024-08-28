@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { useRouter } from "expo-router";
-import { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+//import { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import MapView from "react-native-map-clustering";
 
 // CONSTANTS
@@ -33,24 +33,25 @@ const ListingsMap = memo(({ listings }: Props) => {
 		const points = properties.point_count;
 
 		return (
-			<Marker
-				key={`cluster-${id}`}
-				onPress={onPress}
-				coordinate={{
-					longitude: geometry.coordinates[0],
-					latitude: geometry.coordinates[1],
-				}}
-			>
-				<View style={[styles.marker, { paddingHorizontal: 10 }]}>
-					<Text style={styles.markerText}>{points}</Text>
-				</View>
-			</Marker>
+			<View/>
+			// <Marker
+			// 	key={`cluster-${id}`}
+			// 	onPress={onPress}
+			// 	coordinate={{
+			// 		longitude: geometry.coordinates[0],
+			// 		latitude: geometry.coordinates[1],
+			// 	}}
+			// >
+			// 	<View style={[styles.marker, { paddingHorizontal: 10 }]}>
+			// 		<Text style={styles.markerText}>{points}</Text>
+			// 	</View>
+			// </Marker>
 		);
 	};
 
 	return (
 		<View style={defaultStyles.container}>
-			<MapView
+			{/* <MapView
 				style={StyleSheet.absoluteFill}
 				provider={PROVIDER_GOOGLE}
 				showsUserLocation
@@ -76,7 +77,7 @@ const ListingsMap = memo(({ listings }: Props) => {
 						</View>
 					</Marker>
 				))}
-			</MapView>
+			</MapView> */}
 		</View>
 	);
 });

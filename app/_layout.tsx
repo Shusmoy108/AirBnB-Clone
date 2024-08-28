@@ -6,6 +6,7 @@ import { Platform } from "react-native";
 import * as SecureStore from "expo-secure-store";
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { Feather, Ionicons } from "@expo/vector-icons";
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 // COMPONENTS
 import ModalHeaderText from "@/components/Modal-Header-Text";
@@ -86,6 +87,7 @@ function RootLayoutNav() {
 	}, [isLoaded]);
 
 	return (
+		<GestureHandlerRootView style={{ flex: 1 }}>
 		<Stack>
 			<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
@@ -147,5 +149,6 @@ function RootLayoutNav() {
 
 			<Stack.Screen name="user/index" options={{}} />
 		</Stack>
+		</GestureHandlerRootView>
 	);
 }
